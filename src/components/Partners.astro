@@ -1,0 +1,42 @@
+
+<section class=" py-5 px-4 md:py-[100px] bg-white">
+   <div class="container mx-auto">
+    <h2 class="text-2xl text-center md:text-6xl py-3 text-black">Nuestros Partners</h2>
+    <p class="text-sm md:text-xl text-black text-center">Optimizamos los procesos y con datos validados por empresas certificadas</p>
+
+    <div id="slider1" class="splide mx-2 my-5 md:my-10 " aria-label="Splide Basic HTML Example" >
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide"><img src="/images/brands/logo-autofact.webp" alt="autofact"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-club-del-seguro.webp" alt="club del seguro"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-tanner.webp" alt="tanner"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-unidad.webp" alt="unidad credito"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-dily.webp" alt="dily"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-autocred.webp" alt="autocred"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-eurocapital.webp" alt="eurocapital"></li>
+                  <li class="splide__slide"><img src="/images/brands/logo-venpu-web.webp" alt="venpu"></li>
+                  <!-- <li class="splide__slide"><img src="/images/brands/vespucio-norte.webp" alt="vespucio norte"></li> -->
+              </ul>
+        </div>
+    </div>
+   </div>
+</section>
+
+
+<script>
+    import "@splidejs/splide/css";
+    import Splide from "@splidejs/splide";
+
+    const partners = new Splide("#slider1", {
+    type: "loop",
+    gap: "5vw",
+    focus: "center",
+    autoplay: true, // Habilita el autoplay
+    interval: 3000, // Ajusta el intervalo de tiempo en milisegundos (opcional)
+    pauseOnHover: false, // Pausa el autoplay al pasar el ratón (opcional)
+    perPage: 5,
+    pagination:false,
+    arrows: false,
+  });
+  partners.mount();   
+</script>

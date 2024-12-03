@@ -1,0 +1,44 @@
+
+<section class="pt-[220px] md:pt-[198px]">
+  <section id="slider2" class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+      <ul class="splide__list">
+          <li class="splide__slide"><img src="/images/banners/banner1.webp" alt="automotive consulting"/></li>
+          <li class="splide__slide"><img src="/images/banners/banner2.png" alt="automotive consulting"/></li>
+          <li class="splide__slide"><img src="/images/banners/banner3.png" alt="automotive consulting"/></li>
+      </ul>
+      <script>
+        import "@splidejs/splide/css";
+        import Splide from "@splidejs/splide";
+
+        let slider = new Splide("#slider2", {
+          type: "loop",
+          gap: "5vw",
+          focus: "center",
+          autoplay: true,
+          interval: 5000,
+          pauseOnHover: false,
+          perPage: 1,
+          arrows:false,
+        });
+        slider.mount();
+      </script>
+    </div>
+  </section>
+</section>
+
+<style>
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (max-width:468px){
+    .splide__slide img {
+      height:auto;
+      object-fit: cover;
+    }
+  }
+
+</style>
