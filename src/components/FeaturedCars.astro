@@ -6,10 +6,10 @@ const autos = await getCars();
 ---
 <section class="py-[100px] bg-white">
     <div class="container mx-auto">
-      <h2 class="text-xl text-center md:text-6xl font-bold mb-4 text-black ">Destacados</h2>
+      <h2 class="text-2xl text-center md:text-5xl font-bold mb-4 text-black ">Destacados</h2>
     <p class="text-sm text-center md:text-xl mb-5 text-black">Tenemos una amplia variedad de vehículos usados de las mejores marcas.</p>
 
-    <div id="slider3" class="splide mx-2 md-mx-0 md:my-10" aria-label="galeria de autos" >
+    <div id="slider3" class="splide mx-2 md-mx-0 md:my-10 py-10" aria-label="galeria de autos" >
         <div class="splide__track">
               <ul class="splide__list">
                     {autos.map((auto) => (
