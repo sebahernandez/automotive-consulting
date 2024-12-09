@@ -1,0 +1,53 @@
+---
+const progressWidth = "70%";
+---
+<div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 p-4">
+  <!-- Main Content Container -->
+  <div class="max-w-2xl w-full space-y-8 animate-fade-in">
+    <!-- Alert Banner -->
+    <div class="flex items-center space-x-4 border border-yellow-500/50 bg-yellow-500/10 p-4 rounded-md">
+      <!-- Alert Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="h-6 w-6 text-yellow-500"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 8v4m0 4h.01M12 2a10 10 0 110 20 10 10 0 010-20z"
+        />
+      </svg>
+      <div>
+        <h3 class="text-yellow-500 font-bold">En Construcción</h3>
+        <p class="text-yellow-600">
+          Estamos trabajando para traerte algo increíble muy pronto.
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Title -->
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-800 animate-fade-in">
+        Sitio En Construcción
+      </h1>
+      <p class="text-xl text-gray-600 animate-fade-in delay-100">
+        Estamos trabajando duro para crear algo asombroso.
+      </p>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
+      <div
+        class="bg-blue-600 h-2.5 rounded-full animate-pulse"
+        style={`width: ${progressWidth}`}
+      ></div>
+    </div>
+
+    <!-- Contact Section -->
+   
+  </div>
+</div>
