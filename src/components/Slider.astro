@@ -1,11 +1,114 @@
 
-<section class="pt-[220px] md:pt-[198px]">
-  <section id="slider2" class="splide" aria-label="Splide Basic HTML Example">
+<section>
+  <section id="slider2" class="splide mt-[100px]" aria-label="Splide Basic HTML Example">
     <div class="splide__track">
-      <ul class="splide__list">
-          <li class="splide__slide"><img src="/images/banners/banner1.webp" alt="automotive consulting"/></li>
-          <li class="splide__slide"><img src="/images/banners/banner2.png" alt="automotive consulting"/></li>
-          <li class="splide__slide"><img src="/images/banners/banner3.png" alt="automotive consulting"/></li>
+      <ul class="splide__list relative">
+        <li class="splide__slide relative">
+          <img src="/images/banners/ruta.webp" alt="automotive consulting" class="w-full h-auto"/>
+          <div class="absolute inset-0 p-6 bg-gradient-to-t from-black/100 to-transparent">
+            <div class="flex items-center justify-center flex-col h-full">
+              <h2 class="text-white text-2xl md:text-5xl font-bold mb-2">#vivelaexperiencia</h2>
+              <p class="text-white text-center text-sm md:text-lg text-balance">Elegir tu próximo vehículo nunca fue tan fácil
+                asesoría, opciones y garantías pensadas para ti.
+              </p>
+            <div class="gap-3 mt-5 flex flex-col md:flex-row">
+              <a href="/contacto" 
+              class="
+              text-black
+              font-black
+              font-bold
+              bg-gradient-to-r 
+              from-cyan-400 
+              via-cyan-500 
+              to-cyan-600 
+              hover:bg-gradient-to-br 
+              focus:ring-4 
+              focus:outline-none 
+              focus:ring-cyan-300 
+              font-medium 
+              rounded-lg 
+              text-sm px-5 
+              py-2.5 
+              text-center 
+              me-2
+              mb-2">COMPRA TU AUTO</a>
+              <a href="/catalogo/1"
+              class="
+              text-black 
+              font-black
+              bg-gradient-to-r 
+              from-cyan-400 
+              via-cyan-500 
+              to-cyan-600 
+              hover:bg-gradient-to-br 
+              focus:ring-4 
+              focus:outline-none 
+              focus:ring-cyan-300 
+              font-medium 
+              rounded-lg 
+              text-sm px-5 
+              py-2.5 
+              text-center 
+              me-2 
+              mb-2">VER STOCK</a>
+            </div>
+            </div>
+         
+          </div>
+        </li>
+
+        <li class="splide__slide relative">
+          <img src="/images/banners/auto-suv.webp" alt="automotive consulting" class="w-full h-auto"/>
+          <div class="absolute inset-0 p-6 bg-gradient-to-t from-black/100 to-transparent">
+            <div class="flex items-center justify-center flex-col h-full">
+              <h2 class="text-white text-2xl md:text-5xl font-bold mb-2">#vivelaexperiencia</h2>
+              <p class="text-white text-center text-sm md:text-lg text-balance">Elegir tu próximo vehículo nunca fue tan fácil
+                asesoría, opciones y garantías pensadas para ti.
+              </p>
+            <div class="gap-3 mt-5 flex flex-col md:flex-row">
+              <a href="/contacto" type="button" 
+              class="
+              text-black
+              font-black
+              bg-gradient-to-r 
+              from-cyan-400 
+              via-cyan-500 
+              to-cyan-600 
+              hover:bg-gradient-to-br 
+              focus:ring-4 
+              focus:outline-none 
+              focus:ring-cyan-300 
+              font-medium 
+              rounded-lg 
+              text-sm px-5 
+              py-2.5 
+              text-center 
+              me-2 
+              mb-2">COMPRA TU AUTO</a>
+              <a href="/catalogo/1" type="button" 
+              class="
+              text-black
+              font-black
+              bg-gradient-to-r 
+              from-cyan-400 
+              via-cyan-500 
+              to-cyan-600 
+              hover:bg-gradient-to-br 
+              focus:ring-4 
+              focus:outline-none 
+              focus:ring-cyan-300 
+              font-medium 
+              rounded-lg 
+              text-sm px-5 
+              py-2.5 
+              text-center 
+              me-2 
+              mb-2">VER STOCK</a>
+            </div>
+            </div>
+         
+          </div>
+        </li>
       </ul>
       <script>
         import "@splidejs/splide/css";
@@ -30,13 +133,13 @@
 <style>
   .splide__slide img {
     width: 100%;
-    height: auto;
+    height: 500px;
     object-fit: cover;
   }
 
   @media (max-width:468px){
     .splide__slide img {
-      height:auto;
+      height:500px;
       object-fit: cover;
     }
   }

@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import FloatingWhatsapp from "../components/whatsapp/FloatingWhatsapp.astro";
 import { siteInfo } from "../consts/site.info";
 
 interface Props {
@@ -33,16 +34,17 @@ const { title = siteInfo.title, description = siteInfo.description, image,  } = 
     <title>{title}</title>
   </head>
   <body>
-  <!--   <Header /> -->
+ <Header />
     <slot />
-<!-- 	<Footer /> -->
+    <FloatingWhatsapp />
+	<Footer />
   </body>
 </html>
 <style is:global>
   @font-face {
     font-family: "Glegoo";
     src: url("/fonts/Glegoo-Regular.ttf") format("truetype");
-    font-weight: normal;
+    font-weight: normal,;
     font-style: normal;
   }
 
@@ -65,6 +67,7 @@ const { title = siteInfo.title, description = siteInfo.description, image,  } = 
     --sb-track-color: #232e33;
     --sb-thumb-color: #4b5563;
     --sb-size: 14px;
+    font-family: "Glegoo";
   }
 
   body::-webkit-scrollbar {
