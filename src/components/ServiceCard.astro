@@ -4,27 +4,39 @@ interface Props {
   description: string;
   image: string;
   icon: string;
+  imageDimensions: {
+    width: number;
+    height: number;
+  };
 }
 
-const { title, description, image, icon } = Astro.props;
+const { title, description, image, icon, imageDimensions } = Astro.props;
 ---
 
-<section class="relative h-96 group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-  <img
-    src={image}
-    alt={title}
-    class="absolute inset-0 w-full h-full object-cover"
-  />
-  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30">
-  
-    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-      <h3 class="text-2xl font-bold mb-2">
-        {title}
-      </h3>
-      <p class="text-gray-100 mb-4 text-pretty">
-        {description}
-      </p>
-
-    </div>
+<section>
+  <div class="flex justify-center items-center">
+    <img 
+    src={image} 
+    alt={title} 
+    style={{
+      width: `${imageDimensions.width}px`,
+      height: `${imageDimensions.height}px`,
+    }}
+    />
   </div>
+  <div class="text-black bg-cyan-200 rounded-lg my-5 flex items-center mt-5 border border-black">
+    <div>
+      <img 
+        src={icon} 
+        alt={`${title} icon`} 
+        class="w-16"
+      />
+    </div>
+    <h3 class="text-[16px] font-bold m-0 ml-2">
+      {title}
+    </h3>
+  </div>
+  <p class="text-black mb-4 text-pretty text-sm">
+    {description}
+  </p>
 </section>
