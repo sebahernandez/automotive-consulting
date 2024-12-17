@@ -1,12 +1,12 @@
 ---
 import CatalogoConFiltro from '../../components/Autoscatalogo';
 import Layout from '../../layouts/Layout.astro';
-const { page } = Astro.params;
+const { page = '' } = Astro.params;
 ---
 
 <Layout title='Catalogo'>
-    <h1 class="text-4xl font-bold text-center my-10 text-white px-5 py-3 mt-[260px] md:mt-[240px]">
+    <h1 class="text-xl font-bold text-center text-black px-5 py-5 mt-[160px] md:mt-[200px] md:text-4xl ">
         Catálogo de Vehículos
-      </h1>
+    </h1>
       <CatalogoConFiltro page={page} client:load />
 </Layout>

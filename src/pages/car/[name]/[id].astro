@@ -3,6 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import { getCarsByIds} from "../../../services/automotive";
 
 const { id, name } = Astro.params;// Extraemos el id de la URL
+console.log("nombre del vehiculo url:", name);
 const response = await getCarsByIds({ id }); // Obtenemos el coche por id
 const car = response.data; // Extraemos los datos del coche
 

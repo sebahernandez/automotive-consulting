@@ -19,18 +19,18 @@ const FilterInput: React.FC<FilterInputProps> = ({
 
   return (
     <div className="container mx-auto flex flex-col items-center mb-8 w-full p-4 md:p-0">
-      <div className="flex flex-col justify-end items-center md:justify-end md:items-center md:flex-row w-full mb-4 ">
+      <div className="flex flex-col justify-end items-center md:justify-end md:items-center md:flex-row w-full mb-4 gap-2">
         <input
           type="text"
           placeholder="Buscar vehículos..."
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-full p-2  rounded-sm  text-blac mb-2  md:mb-0"
+          className="w-full p-2 rounded-sm mb-2 md:mb-0 border border-gray-300 h-10"
         />
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="p-2 rounded-sm border-2  text-black m-1 w-full md:w-[200px]"
+          className="rounded-sm border border-gray-300 text-black w-full md:w-[200px] h-10"
         >
           <option value="">Ordenar por precio</option>
           <option value="asc">Menor a mayor</option>
@@ -39,7 +39,7 @@ const FilterInput: React.FC<FilterInputProps> = ({
         <select
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
-          className="p-2 rounded-sm border-2  text-black m-1 w-full md:w-[200px]"
+          className="p-2 rounded-sm border border-gray-300  text-black m-1 w-full md:w-[200px] h-10"
         >
           <option value="">Seleccionar marca</option>
           {brands.map((brand) => (

@@ -55,41 +55,6 @@ const { title = siteInfo.title, description = siteInfo.description, image,  } = 
     font-style: normal;
   }
 
-  :root {
-    --bgcolor: #111b28;
-  }
-  html {
-    font-family: system-ui, sans-serif;
-   
-  }
-
-  body {
-    --sb-track-color: #232e33;
-    --sb-thumb-color: #4b5563;
-    --sb-size: 14px;
-    font-family: "Glegoo";
-  }
-
-  body::-webkit-scrollbar {
-    width: var(--sb-size);
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 3px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-  }
-
-  @supports not selector(::-webkit-scrollbar) {
-    body {
-      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-    }
-  }
-
   h1,
   h2,
   h3 {
