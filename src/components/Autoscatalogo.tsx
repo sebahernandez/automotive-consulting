@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllVehicles } from "../services/automotive";
 import CardVehiculeWrapper from "./CardVehiculeWrapper";
-import Loading from "../components/Loading";
 import FilterInput from "../components/FilterInput";
+import { SpinnerDotted } from "spinners-react/lib/esm/SpinnerDotted";
 
 interface Vehicle {
   id: number;
@@ -105,10 +105,6 @@ const CatalogoConFiltro: React.FC<CatalogoConFiltroProps> = ({ page }) => {
     }
   }, [car, currentPage, filter, sort, brand]);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   const brands = Array.from(new Set(car.map((vehicle) => vehicle.brand)));
 
   return (
@@ -121,64 +117,76 @@ const CatalogoConFiltro: React.FC<CatalogoConFiltroProps> = ({ page }) => {
         }}
         brands={brands}
       />
-      <main className="container mx-auto text-white">
-        {currentVehicles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {currentVehicles.map((auto) => (
-              <CardVehiculeWrapper
-                key={auto.id}
-                id={auto.id.toString()}
-                name={auto.name}
-                imageUrl={auto.imageUrl}
-                price={auto.price.replace(/,/g, ".")}
-                brand={auto.brand}
-                fuelType={auto.fuelType}
-                miles={auto.miles}
-                transmission={auto.transmission}
-                available={auto.available}
-              />
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-xl mt-10">
-            No se encontraron vehículos.
-          </p>
-        )}
 
-        <div className="flex justify-center mt-10">
-          <nav className="flex space-x-2 my-5" aria-label="Pagination">
-            {currentPage > 1 && (
-              <a
-                href={`/catalogo/${currentPage - 1}`}
-                className="relative inline-flex items-center px-4 py-2 text-sm  cursor-pointer bg-slate-700 text-white"
-              >
-                Anterior
-              </a>
-            )}
-            {paginationLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`relative inline-flex items-center px-4 py-2 text-sm font-medium   cursor-pointer leading-5 rounded-sm transition duration-150 ease-in-out focus:outline-none focus:shadow-outline-blue  ${
-                  parseInt(link.text) === currentPage
-                    ? " bg-slate-700 text-white"
-                    : "bg-white text-gray-700 "
-                }`}
-              >
-                {link.text}
-              </a>
-            ))}
-            {currentPage < totalPages && (
-              <a
-                href={`/catalogo/${currentPage + 1}`}
-                className="relative inline-flex items-center px-4 py-2 text-sm  cursor-pointer bg-slate-700 text-white"
-              >
-                Siguiente
-              </a>
-            )}
-          </nav>
+      {isLoading ? (
+        <div className="flex justify-center mt-4 py-5">
+          <SpinnerDotted
+            size={69}
+            thickness={136}
+            speed={114}
+            color="rgb(2, 203, 203)"
+          />
         </div>
-      </main>
+      ) : (
+        <main className="container mx-auto text-white transition-opacity duration-500 ease-in-out opacity-100">
+          {currentVehicles.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {currentVehicles.map((auto) => (
+                <CardVehiculeWrapper
+                  key={auto.id}
+                  id={auto.id.toString()}
+                  name={auto.name}
+                  imageUrl={auto.imageUrl}
+                  price={auto.price.replace(/,/g, ".")}
+                  brand={auto.brand}
+                  fuelType={auto.fuelType}
+                  miles={auto.miles}
+                  transmission={auto.transmission}
+                  available={auto.available}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-xl mt-10">
+              No se encontraron vehículos.
+            </p>
+          )}
+
+          <div className="flex justify-center mt-10">
+            <nav className="flex space-x-2 my-5" aria-label="Pagination">
+              {currentPage > 1 && (
+                <a
+                  href={`/catalogo/${currentPage - 1}`}
+                  className="relative inline-flex items-center px-4 py-2 text-sm  cursor-pointer bg-slate-700 text-white"
+                >
+                  Anterior
+                </a>
+              )}
+              {paginationLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`relative inline-flex items-center px-4 py-2 text-sm font-medium   cursor-pointer leading-5 rounded-sm transition duration-150 ease-in-out focus:outline-none focus:shadow-outline-blue  ${
+                    parseInt(link.text) === currentPage
+                      ? " bg-slate-700 text-white"
+                      : "bg-white text-gray-700 "
+                  }`}
+                >
+                  {link.text}
+                </a>
+              ))}
+              {currentPage < totalPages && (
+                <a
+                  href={`/catalogo/${currentPage + 1}`}
+                  className="relative inline-flex items-center px-4 py-2 text-sm  cursor-pointer bg-slate-700 text-white"
+                >
+                  Siguiente
+                </a>
+              )}
+            </nav>
+          </div>
+        </main>
+      )}
     </div>
   );
 };
