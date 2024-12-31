@@ -12,7 +12,6 @@ interface Props {
 
 const { title = siteInfo.title, description = siteInfo.description, image = siteInfo.image ,  } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="es">
   <head>
@@ -21,7 +20,6 @@ const { title = siteInfo.title, description = siteInfo.description, image = site
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-
     <!-- OG tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
