@@ -91,7 +91,6 @@ const CatalogoConFiltro: React.FC<CatalogoConFiltroProps> = ({ page }) => {
         1,
         currentPage - Math.floor(VISIBLE_PAGES / 2)
       );
-      const endPage = Math.min(total, startPage + VISIBLE_PAGES - 1);
 
       const adjustedStartPage = Math.max(
         1,
