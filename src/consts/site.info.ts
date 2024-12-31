@@ -5,4 +5,5 @@ export const siteInfo = {
   keywords:
     "venta de autos, venta de vehiculos, venta de usados, compra venta de vehiculos, compra venta de autos",
   image: "/images/ogg-image.jpeg",
+  url: "https://www.automotiveconsulting.cl",
 };

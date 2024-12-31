@@ -8,38 +8,55 @@ interface Props {
   title?: string;
   image?: string;
   description?: string;
+  url?: string;
 }
 
-const { title = siteInfo.title, description = siteInfo.description, image = siteInfo.image ,  } = Astro.props;
+const { 
+  title = siteInfo.title, 
+  description = siteInfo.description, 
+  image = siteInfo.image,
+  url = siteInfo.url 
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+
     <!-- OG tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.svg">
 
     <title>{title}</title>
   </head>
   <body>
- <Header />
+    <Header />
     <slot />
     <FloatingWhatsapp />
-	<Footer />
+    <Footer />
   </body>
 </html>
 <style is:global>
   @font-face {
     font-family: "Glegoo";
     src: url("/fonts/Glegoo-Regular.ttf") format("truetype");
-    font-weight: normal,;
+    font-weight: normal;
     font-style: normal;
   }
 
@@ -56,6 +73,4 @@ const { title = siteInfo.title, description = siteInfo.description, image = site
     font-family: "Glegoo", sans-serif;
     font-weight: bold;
   }
-
-
 </style>
