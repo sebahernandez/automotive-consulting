@@ -1,4 +1,5 @@
 ---
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import FloatingWhatsapp from "../components/whatsapp/FloatingWhatsapp.astro";
@@ -34,6 +35,7 @@ const { title = siteInfo.title, description = siteInfo.description, image = site
  <Header />
     <slot />
     <FloatingWhatsapp />
+    <SpeedInsights />
 	<Footer />
   </body>
 </html>
