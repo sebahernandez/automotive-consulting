@@ -1,24 +1,22 @@
 <section class="bg-gray-50">
   <div class="container mx-auto py-16 px-4">
     <!-- Título centrado -->
-     <div class="mb-10">
+    <div class="mb-10">
       <h2 class="text-2xl text-center md:text-5xl py-3 text-black">Sucursales</h2>
       <p class="text-gray-600 text-lg text-center">
-       Ven a visitarnos en nuestra sucursal principal, ubicada en una zona accesible y con excelentes servicios.
-     </p>
-     </div>
+       Ven a visitarnos en nuestras sucursales, ubicadas en zonas accesibles y con excelentes servicios.
+      </p>
+    </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Grid layout: 2 mapas arriba, 1 grande abajo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       <!-- Primera ubicación -->
       <div class="flex flex-col bg-gray-100 rounded-lg shadow-md overflow-hidden">
-        <!-- Información -->
         <div class="p-4 bg-cyan-200">
           <h3 class="text-gray-800 text-lg font-semibold mb-2">
             Camino El Alba 8760 OF 304, Las Condes
           </h3>
-         
         </div>
-        <!-- Mapa -->
         <div class="relative h-[300px]">
           <iframe 
             class="absolute top-0 left-0 w-full h-full rounded-b-lg" 
@@ -30,17 +28,14 @@
           </iframe>
         </div>
       </div>
-  
+
       <!-- Segunda ubicación -->
       <div class="flex flex-col bg-gray-100 rounded-lg shadow-md overflow-hidden">
-        <!-- Información -->
-        <div class="p-4 p-4 bg-cyan-200">
+        <div class="p-4 bg-cyan-200">
           <h3 class="text-gray-800 text-lg font-semibold mb-2">
-            Sucursal en Auto Park, Av. Departamental 4400 y 4500, Macul.
+            Sucursal en Auto Park, Av. Departamental 4400, Macul
           </h3>
-
         </div>
-        <!-- Mapa -->
         <div class="relative h-[300px]">
           <iframe 
             class="absolute top-0 left-0 w-full h-full rounded-b-lg" 
@@ -53,6 +48,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Mapa grande abajo -->
+    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+      <div class="p-4 bg-cyan-200">
+        <h3 class="text-gray-800 text-xl font-semibold mb-2 text-center">
+          Sucursal en Camino Internacional 3500, Viña del Mar
+          
+        </h3>
+      </div>
+      <div class="relative h-[500px]">
+        <iframe 
+          class="absolute top-0 left-0 w-full h-full rounded-b-lg" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1169719956397!2d-71.4982515!3d-32.9743156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dc604cba5f1b%3A0xd98710f4e50f5f2a!2sCam.%20Internacional%203500%2C%202510000%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1749083345705!5m2!1ses-419!2scl" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
   </div>
-  
 </section>
